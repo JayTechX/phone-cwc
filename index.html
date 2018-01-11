@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src * 'self' 'unsafe-inline'; media-src * 'unsafe-inline'" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+    //The jQuery Mobile CSS theme file (optional, if you are overriding the default theme)
+<link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+//The jQuery core JavaScript file
+<script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+//The jQuery Mobile core JavaScript file
+<script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+    <title>CWC</title>
+</head>
+
+<body>
+    <div data-role="page" data-theme ="b" id = "pg1">
+
+	<div data-role="header" >
+		<h1>CWC HOME</h1>
+	<div data-role="navbar">
+    <ul>
+      <li><a href="#pg1" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+      <li><a href="#pg2" data-icon = "user" data-transition="slide">Clients</a></li>
+      <li><a href="#pg3" data-icon = "clock" data-transition="slide">Appointments</a></li>
+    </ul>
+  </div>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content" ]>
+		<p style="font-size: 20px;">Home</p>
+		<p>This is a single page boilerplate template that you can copy to build your first jQuery Mobile page. Each link or form from here will pull a new page in via Ajax to support the animated page transitions.</p>
+		<p>Just view the source and copy the code to get started. All the CSS and JS is linked to the jQuery CDN versions so this is super easy to set up. Remember to include a meta viewport tag in the head to set the zoom level.</p>
+		<p>This template is standard HTML document with a single "page" container inside, unlike a <a href="../pages-multi-page/" data-ajax="false">multi-page template</a> that has multiple pages within it. We strongly recommend building your site or app as a series of separate pages like this because it's cleaner, more lightweight and works better without JavaScript.</p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>City Waste Cleaners &copy; 2018 </h4>
+	</div><!-- /footer -->
+
+</div><!-- /page -->
+
+	<div data-role="page" data-theme ="b" id="pg2">
+
+	<div data-role="header" >
+		<h1>CWC CLIENTS</h1>
+		<div data-role="navbar">
+    <ul>
+      <li><a href="#pg1" data-icon="home" data-transition="slide" data-direction="reverse" >Home</a></li>
+      <li><a href="#pg2" data-icon = "user" class="ui-btn-active ui-state-persist" >Clients</a></li>
+      <li><a href="#pg3" data-icon = "clock" data-transition="slide">Appointments</a></li>
+    </ul>
+  </div>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content" ]>
+		<p style="font-size: 20px;">Clients</p><button onclick="location.reload();">reload</button>
+		<form class="ui-filterable">
+  <input id="myFilter" data-type="search" placeholder="Search for clients..">
+</form>
+		  <ul data-role="listview" data-filter="true" id="client_holder" data-input="#myFilter" data-autodividers="true" data-inset="true">
+    
+  </ul>
+
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>City Waste Cleaners &copy; 2018 </h4>
+	</div><!-- /footer -->
+
+</div><!-- /page -->
+    
+    <div data-role="page" data-theme ="b" id="pg3">
+
+	<div data-role="header" >
+		<h1>CWC APPOINTMENTS</h1>
+		<div data-role="navbar">
+    <ul>
+      <li><a href="#pg1" data-icon="home" data-transition="slide" data-direction="reverse">Home</a></li>
+      <li><a href="#pg2" data-icon = "user" data-transition="slide" data-direction="reverse" >Clients</a></li>
+      <li><a href="#pg3" data-icon = "clock" class="ui-btn-active ui-state-persist">Appointments</a></li>
+    </ul>
+  </div>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content" ]>
+		<p style="font-size: 20px;">Appointments</p>
+			<div data-role="collapsible">
+  			<h1>Book an appointment</h1>
+  			<div class="ui-field-contain">
+ 			 <form method="post" action="#">
+ 				 <label for="fname">Title:</label>
+				 <input type="text" name="fname" id="fname" data-clear-btn="true" placeholder="Title...">
+				 <label for="message">Message:</label>
+				 <textarea type="text" name="message" id="message" rows="4" cols="50"></textarea>
+				 <input type="submit" data-inline="true" value="Submit">
+			 </form>
+			 </div>
+			</div>
+		<p>This is a single page boilerplate template that you can copy to build your first jQuery Mobile page. Each link or form from here will pull a new page in via Ajax to support the animated page transitions.</p>
+		<p>Just view the source and copy the code to get started. All the CSS and JS is linked to the jQuery CDN versions so this is super easy to set up. Remember to include a meta viewport tag in the head to set the zoom level.</p>
+		<p>This template is standard HTML document with a single "page" container inside, unlike a <a href="../pages-multi-page/" data-ajax="false">multi-page template</a> that has multiple pages within it. We strongly recommend building your site or app as a series of separate pages like this because it's cleaner, more lightweight and works better without JavaScript.</p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>City Waste Cleaners &copy; 2018 </h4>
+	</div><!-- /footer -->
+
+</div><!-- /page -->
+
+	
+	<script type="text/javascript">
+	$.ajax({
+    		url: "https://citywt.herokuapp.com/client/?format=json",    // path to remote script
+    		dataType: "JSON",                                // data set to retrieve JSON
+    		success: function (data) {                       // on success, do something...
+        	// grabbing my JSON data and saving it
+        	// to localStorage for future use.
+        	 current = JSON.stringify(data); 
+        	 console.log(current[1].name);
+        	localStorage.setItem('myData', JSON.stringify(data));
+    		}
+		});
+		var myData = JSON.parse(localStorage.getItem('myData'));
+	var i;
+var client_data = '';
+
+for (i = 0; i < myData.length; i = i + 1) {
+   	  //console.log(myData[i].name);      // this should output the firstnames.
+      client_data += '<li><a href="tryit.asp-filename=tryjqmob_lists_autodividers.html#">'+myData[i].name+'</a></li>';
+}
+		$('#client_holder').append(client_data);
+	</script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+    
+</body>
+
+
+</html>
